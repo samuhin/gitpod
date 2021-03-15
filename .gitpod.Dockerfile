@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:9
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
