@@ -1,5 +1,5 @@
   
-image: jupyter/datascience-notebook
+image: gitpod/workspace-full
   #file: .gitpod.Dockerfile
 
 tasks:
