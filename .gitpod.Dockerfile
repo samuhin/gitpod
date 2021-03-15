@@ -1,4 +1,4 @@
-FROM debian/eol:jessie-slim
+FROM debian:8
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
