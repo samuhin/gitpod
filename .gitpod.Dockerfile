@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:10
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
