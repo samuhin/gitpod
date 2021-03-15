@@ -1,6 +1,6 @@
   
-image: gitpod/workspace-full
-  #file: .gitpod.Dockerfile
+image:
+  file: .gitpod.Dockerfile
 
 tasks:
   - command: bash
