@@ -1,4 +1,4 @@
-FROM debian:9
+FROM ubuntu:20.04
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
@@ -7,7 +7,7 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ### base ###
-RUN apt-get update && apt-get -y upgrade && apt-get install -y sudo
+RUN apt-get update && apt-get -y upgrade && apt-get install -y jupyter sudo
 
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
