@@ -1,10 +1,7 @@
 FROM buildpack-deps:focal
 
-COPY install-packages /usr/bin
-
 ### base ###
 RUN yes | unminimize \
-    && install-packages \
         zip \
         unzip \
         bash-completion \
