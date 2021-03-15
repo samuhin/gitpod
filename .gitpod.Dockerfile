@@ -1,4 +1,4 @@
-FROM debian:7
+FROM ubuntu:14.04
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
