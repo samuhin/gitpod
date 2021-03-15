@@ -3,4 +3,4 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - command: sudo bash
+  - command: bash
