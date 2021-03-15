@@ -7,7 +7,7 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ### base ###
-RUN apt-get update && apt-get -y upgrade && apt-get install -y docker-compose jupyter sudo
+RUN apt-get update && apt-get -y upgrade && apt-get install -y docker-compose jupyter sudo slirp4netns 
 
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
