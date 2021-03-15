@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM debian:7
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
@@ -7,11 +7,11 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ### base ###
-RUN apk update && apk upgrade && apk add sudo
+RUN apt-get update && apt-get -y upgrade && apt-get install -y sudo
 
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
-RUN adduser -D -u 33333 -h /home/gitpod -s /bin/bash gitpod \
+RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod \
     # passwordless sudo for users in the 'sudo' group
     && sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 
