@@ -3,4 +3,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - command: bash
+  - command: jupyter notebook --ip 0.0.0.0 --NotebookApp.token='' --no-browser&
+
+ports:
+  - port: 8000-9000
+    onOpen: ignore
