@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
