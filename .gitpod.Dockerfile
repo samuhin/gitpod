@@ -1,6 +1,7 @@
 FROM debian
 
-RUN echo "root:x:0:0:root:/root:/bin/bash" > /etc/passwd
-RUN echo "gitpod:x:0:0::/home/gitpod:/bin/bash" >> /etc/passwd
+RUN apt-get update && apt-get install -y sudo
+RUN echo "root    ALL=(ALL:ALL) ALL" > /etc/sudoers
+RUN echo "gitpod    ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 USER gitpod
