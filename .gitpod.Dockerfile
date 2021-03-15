@@ -1,34 +1,6 @@
 FROM buildpack-deps:focal
 
-### base ###
-RUN yes | unminimize \
-        zip \
-        unzip \
-        bash-completion \
-        build-essential \
-        ninja-build \
-        htop \
-        jq \
-        less \
-        locales \
-        man-db \
-        nano \
-        software-properties-common \
-        sudo \
-        time \
-        vim \
-        multitail \
-        lsof \
-        ssl-cert \
-        fish \
-        zsh \
-    && locale-gen en_US.UTF-8
-
 ENV LANG=en_US.UTF-8
-
-### Git ###
-RUN add-apt-repository -y ppa:git-core/ppa \
-    && install-packages git
 
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
