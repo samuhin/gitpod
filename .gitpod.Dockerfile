@@ -1,4 +1,4 @@
-FROM debian/eol:wheezy-slim
+FROM debian/eol:jessie-slim
 
 ENV LANG=en_US.UTF-8
 ENV TZ=Europe/Moscow
