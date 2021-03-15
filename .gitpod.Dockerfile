@@ -1,7 +1,10 @@
 FROM buildpack-deps:focal
 
 ENV LANG=en_US.UTF-8
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+### base ###
 RUN apt-get update && apt-get install -y sudo
 
 ### Gitpod user ###
@@ -16,8 +19,3 @@ RUN { echo && echo "PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u\[\033[00m\] \[\033[01
 
 ### Gitpod user (2) ###
 USER gitpod
-# use sudo so that user does not get sudo usage info on (the first) login
-RUN sudo echo "Running 'sudo' for Gitpod: success" && \
-    # create .bashrc.d folder and source it in the bashrc
-    mkdir /home/gitpod/.bashrc.d && \
-    (echo; echo "for i in \$(ls \$HOME/.bashrc.d/*); do source \$i; done"; echo) >> /home/gitpod/.bashrc
